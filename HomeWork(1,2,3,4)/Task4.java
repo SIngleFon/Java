@@ -15,6 +15,11 @@ public class Task4 {
             array[i] = String.valueOf(ar[i]);
         }
         int[] result = new int[10];
+        if (find == -1){
+            int[] res = new int[1];
+            res[0] = Integer.parseInt(UserKey[ind]);
+            return res;
+        }
         if (find == 1) {
             for (int j = 0; j < 10; j++) {
                 int s = Integer.parseInt(array[0]);
@@ -33,6 +38,7 @@ public class Task4 {
             }
             return result;
         }
+
     }
 
     public static int find_index(String[] arr, int s) {
@@ -43,7 +49,6 @@ public class Task4 {
                 return j;
             }
         }
-
         return -1;
     }
 
@@ -55,6 +60,7 @@ public class Task4 {
         String[] UserKey = in.nextLine().split("\s*[+=]\s*");
         int[] arr = test(UserKey, 0);
         int[] arr1 = test(UserKey, 1);
+        System.out.println(arr[0]);
         boolean flag = false;
         int x1 = 0;
         int y1 = 0;
