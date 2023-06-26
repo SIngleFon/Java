@@ -27,10 +27,9 @@ public class Task4 {
         } else {
             for (int j = 0; j < 10; j++) {
                 int s = Integer.parseInt(array[1]);
-                String giga = String.valueOf(s) + String.valueOf(j);
+                String giga = String.valueOf(j) + String.valueOf(s);
                 int res = Integer.parseInt(giga);
                 result[j] = res;
-
             }
             return result;
         }
@@ -44,6 +43,7 @@ public class Task4 {
                 return j;
             }
         }
+
         return -1;
     }
 
@@ -55,25 +55,22 @@ public class Task4 {
         String[] UserKey = in.nextLine().split("\s*[+=]\s*");
         int[] arr = test(UserKey, 0);
         int[] arr1 = test(UserKey, 1);
-        // for (int line : arr2){
-        // System.out.println(line);
-        // }
-        // for (int line : arr){
-        // System.out.println(line);
-        // }
+        boolean flag = false;
+        int x1 = 0;
+        int y1 = 0;
         for (int i : arr) {
             int result = 0;
             for (int j : arr1) {
                 result = i + j;
-            }
-            if (result > Integer.parseInt(UserKey[2])) {
-                System.out.println("Ошибка, невозможно!");
-                break;
-            }
-            if (result == Integer.parseInt(UserKey[2])) {
-                System.out.println("Нашел");
-                break;
+                if (result == Integer.parseInt(UserKey[2])) {
+                    x1 = i;
+                    y1 = j;
+                    flag = true;
+                    break;
+                }
             }
         }
+        System.out.printf(flag ? "Пример: %d + %d = %d" : "К сожалению ответа нет", x1, y1,
+                Integer.parseInt(UserKey[2]));
     }
 }
