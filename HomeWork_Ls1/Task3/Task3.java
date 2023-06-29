@@ -1,3 +1,4 @@
+package Task3;
 // Реализовать простой калькулятор
 import java.util.Scanner;
 

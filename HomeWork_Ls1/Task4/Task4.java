@@ -1,3 +1,4 @@
+package Task4;
 // (дополнительное задание) Задано уравнение вида q + w = e, q, w, e >= 0. 
 // Некоторые цифры могут быть заменены знаком вопроса, например, 2? + ?5 = 69. 
 // Требуется восстановить выражение до верного равенства. 
@@ -60,7 +61,6 @@ public class Task4 {
         String[] UserKey = in.nextLine().split("\s*[+=]\s*");
         int[] arr = test(UserKey, 0);
         int[] arr1 = test(UserKey, 1);
-        System.out.println(arr[0]);
         boolean flag = false;
         int x1 = 0;
         int y1 = 0;
